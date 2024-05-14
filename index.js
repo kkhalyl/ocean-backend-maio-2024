@@ -25,4 +25,12 @@ app.post('/item', function(req,res){
   itens.push(novoItem)
   res.send('Item adicionado com sucesso: '+novoItem)
 })
+
+app.put('/item/:id', function(req,res){
+  const id = req.params.id
+  const body = req.body
+  const atualizarItem = body.nome
+  itens [id-1] = atualizarItem
+  res.send('Item atualizado com sucesso: '+id+', '+atualizarItem)
+})
 app.listen(3000)
